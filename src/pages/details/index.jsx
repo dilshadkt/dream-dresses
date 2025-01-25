@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { products } from "../../constants";
+import { UseCart } from "../../hooks/UseCart";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
   const currentProduct = products.filter(
     (item) => Number(item.id) === Number(id)
   )[0];
+  const { addToCart } = UseCart();
   const [size, setSize] = useState("M");
   const [color, setColor] = useState("bg-gray-500");
   const [whishList, setWhishList] = useState(false);
@@ -198,12 +200,12 @@ const ProductDetailPage = () => {
 
             {/* <!-- buttons - start --> */}
             <div className="flex gap-2.5">
-              <a
-                href="#"
+              <button
+                onClick={() => addToCart({ ...currentProduct, size: size })}
                 className="inline-block flex-1 rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 sm:flex-none md:text-base"
               >
                 Add to cart
-              </a>
+              </button>
 
               <a
                 href="#"

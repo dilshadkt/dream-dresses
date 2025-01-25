@@ -8,7 +8,7 @@ export const products = [
   {
     id: 1,
     title: "Pullover with pattern",
-    price: "",
+    price: "599",
     category: "men",
     brand: "Fancy Brand",
     category: "men",
@@ -482,9 +482,9 @@ export const products = [
     brand: "Mars Infiniti",
     rating: "42 ratings",
     image: [
-      "/images/shirt/shirt35.webp",
-      "/images/shirt/shirt35.1.webp",
-      "/images/shirt/shirt35.2.webp",
+      "/images/shirt/shirt36.webp",
+      "/images/shirt/shirt36.1.webp",
+      "/images/shirt/shirt36.2.webp",
     ],
   },
   {
@@ -498,6 +498,19 @@ export const products = [
       "/images/shirt/shirt37.webp",
       "/images/shirt/shirt37.1.webp",
       "/images/shirt/shirt37.2.webp",
+    ],
+  },
+  {
+    id: 39,
+    title: "Boys & Girls Party(Festive) T-shirt Track Pants  (White/Green)",
+    price: "326",
+    category: "men",
+    brand: "Afreen Creations ",
+    rating: "41 ratings",
+    image: [
+      "/images/shirt/shirt38.webp",
+      "/images/shirt/shirt38.1.webp",
+      "/images/shirt/shirt38.2.webp",
     ],
   },
 ];
