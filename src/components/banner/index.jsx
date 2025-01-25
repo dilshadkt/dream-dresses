@@ -14,9 +14,9 @@ const Banner = () => {
             </h2>
 
             <p className="mb-8 max-w-md text-gray-400">
-              This is a section of some simple filler text, also known as
-              placeholder text. It shares some characteristics of a real written
-              text.
+              Don’t miss out on the hottest deals this season! Shop your
+              favorite styles at unbeatable discounts and upgrade your wardrobe
+              for less.
             </p>
 
             <div className="mt-auto">
@@ -28,6 +28,7 @@ const Banner = () => {
               </a>
             </div>
           </div>
+
           {/* <!-- content - end --> */}
 
           {/* <!-- image - start --> */}

@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 import { products } from "../../constants";
 
 const Products = () => {
+  const getRandomProducts = (arr, count) => {
+    const shuffled = arr.sort(() => 0.5 - Math.random()); // Shuffle the array
+    return shuffled.slice(0, count); // Get the first `count` items
+  };
+
+  const randomProducts = getRandomProducts(products, 12);
   return (
     <div className="bg-white py-6 sm:py-8 lg:py-12">
       <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
@@ -13,15 +19,14 @@ const Products = () => {
           </h2>
 
           <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-            This is a section of some simple filler text, also known as
-            placeholder text. It shares some characteristics of a real written
-            text but is random or otherwise generated.
+            Explore our handpicked collections, showcasing the best designs
+            crafted to match every style and occasion. Your perfect look awaits.
           </p>
         </div>
         {/* <!-- text - end --> */}
 
         <div className="grid gap-x-4 gap-y-8 sm:grid-cols-2 md:gap-x-6 lg:grid-cols-3 xl:grid-cols-4">
-          {products.map((product) => (
+          {randomProducts.map((product) => (
             <div key={product.id}>
               <Link
                 to={`/collection/${product.id}`}
@@ -66,6 +71,15 @@ const Products = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="w-full mt-10 flex items-center justify-center">
+          <Link
+            to={"/sale"}
+            className="text-gray-700 border hover:bg-indigo-500 hover:border-none
+          hover:text-white px-10 py-3 rounded-lg"
+          >
+            View All
+          </Link>
         </div>
       </div>
     </div>

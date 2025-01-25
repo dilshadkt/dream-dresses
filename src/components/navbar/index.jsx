@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="mb-8 border-b sticky top-0 bg-white z-50">
+      <header className=" border-b sticky top-0 bg-white z-50">
         <div className="mx-auto flex max-w-screen-2xl items-center justify-between px-4 md:px-8">
           {/* <!-- logo - start --> */}
           <Link
@@ -27,7 +27,7 @@ const Navbar = () => {
               <path d="M96 0V47L48 94H0V47L48 0H96Z" />
             </svg>
             Flowrift */}
-            <img src="/images/logo.png" alt="" className=" w-40 md:w-52 " />
+            <img src="/images/logo.png" alt="" className=" w-32 md:w-52 " />
           </Link>
           {/* <!-- logo - end --> */}
 

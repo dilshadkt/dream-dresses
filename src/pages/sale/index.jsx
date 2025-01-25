@@ -1,13 +1,50 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { products } from "../../constants";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 const Sale = () => {
+  const [searchParams] = useSearchParams();
+  const [filteredProduct, setFilteredProduct] = useState(products);
+  // Access query parameters
+  const category = searchParams.get("category");
+
+  useEffect(() => {
+    if (category === "all" || category === null) {
+      setFilteredProduct(products);
+    } else {
+      setFilteredProduct(() =>
+        products.filter((item) => item.category === category)
+      );
+    }
+  }, [category]);
+
   return (
-    <div className="bg-white py-6 sm:py-8 lg:py-12">
+    <div className="bg-white pb-6 sm:py-8 lg:py-12">
       <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
-        <div className="grid gap-x-4 gap-y-8 sm:grid-cols-2 md:gap-x-6 lg:grid-cols-3 xl:grid-cols-4">
-          {products.map((product) => (
+        <div className="h-[70px]  mt-3 md:mt-0">
+          <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
+            <div className="flex h-12 w-[90%] sm:w-78 divide-x overflow-hidden rounded-lg border">
+              {["all", "men", "women", "teens", "kids"].map((item, index) => (
+                <Link
+                  key={index}
+                  to={`/sale?category=${item}`}
+                  className={` ${
+                    item === "all"
+                      ? (category === null || category === "all") &&
+                        `bg-indigo-500 text-white`
+                      : category === item && `bg-indigo-500 text-white`
+                  } flex capitalize w-1/3 items-center justify-center
+                   text-sm md:text-base text-gray-500 transition
+                    duration-100 hover:bg-gray-100 hover:text-gray-800 `}
+                >
+                  {item}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="grid gap-x-4 overflow-y-auto gap-y-8 sm:grid-cols-2 md:gap-x-6 lg:grid-cols-3 xl:grid-cols-4">
+          {filteredProduct.map((product) => (
             <div key={product.id}>
               <Link
                 to={`/collection/${product.id}`}

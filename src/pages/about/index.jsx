@@ -8,9 +8,9 @@ const About = () => {
           <div>
             <div className="h-64 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-auto">
               <img
-                src="https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?auto=format&q=75&fit=crop&w=600&h=750"
+                src="/images/about.jpg"
                 loading="lazy"
-                alt="Photo by Martin Sanchez"
+                alt="Dream Dresses Collection"
                 className="h-full w-full object-cover object-center"
               />
             </div>
@@ -22,43 +22,37 @@ const About = () => {
             </p>
 
             <h1 className="mb-4 text-center text-2xl font-bold text-gray-800 sm:text-3xl md:mb-6 md:text-left">
-              Our competitive advantage
+              Our competitive advantage at Dream Dresses
             </h1>
 
             <p className="mb-6 text-gray-500 sm:text-lg md:mb-8">
-              This is a section of some simple filler text, also known as
-              placeholder text. It shares some characteristics of a real written
-              text but is random or otherwise generated. It may be used to
-              display a sample of fonts or generate text for testing. Filler
-              text is dummy text which has no meaning however looks very similar
-              to real text.
+              At Dream Dresses, we believe that every woman deserves to feel
+              beautiful and confident in the perfect dress. Our carefully
+              curated collection is designed with attention to detail, offering
+              a variety of styles, colors, and sizes to suit every occasion.
+              From elegant evening gowns to casual dresses, each piece embodies
+              quality, comfort, and timeless fashion.
               <br />
               <br />
-              This is a section of some simple filler text, also known as
-              placeholder text. It shares some characteristics of a real written
-              text but is{" "}
-              <a
-                href="#"
-                className="text-indigo-500 underline transition duration-100 hover:text-indigo-600 active:text-indigo-700"
-              >
-                random
-              </a>{" "}
-              or otherwise generated. It may be used to display a sample of
-              fonts or generate text for testing. Filler text is dummy text
-              which has no meaning however looks very similar to real text.
+              Whether you're looking for a dress for a special event or
+              something for everyday wear, Dream Dresses has something for every
+              style. Our dresses are crafted to not only make you look stunning
+              but also to provide the comfort and fit you need to feel your
+              best.
             </p>
 
             <h2 className="mb-2 text-center text-xl font-semibold text-gray-800 sm:text-2xl md:mb-4 md:text-left">
-              About us
+              About Dream Dresses
             </h2>
 
             <p className="mb-6 text-gray-500 sm:text-lg md:mb-8">
-              This is a section of some simple filler text, also known as
-              placeholder text. It shares some characteristics of a real written
-              text but is random or otherwise generated. It may be used to
-              display a sample of fonts or generate text for testing. Filler
-              text is dummy text which has no meaning however looks very similar
-              to real text.
+              Dream Dresses is dedicated to offering the latest trends in
+              fashion while keeping comfort and elegance at the forefront. We
+              believe in creating dresses that make our customers feel like
+              they're walking on air, with fabrics that flow effortlessly and
+              designs that capture the essence of sophistication. Whether you're
+              preparing for a gala, a wedding, or a casual outing, our dresses
+              are designed to make a statement and help you shine.
             </p>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { UseCart } from "../../hooks/UseCart";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { items, subtotal, addToCart, removeFromCart, removeEntireItem } =
@@ -19,8 +20,8 @@ const Cart = () => {
               key={item?.id}
               className="flex flex-wrap gap-x-4 overflow-hidden rounded-lg border sm:gap-y-4 lg:gap-6"
             >
-              <a
-                href="#"
+              <Link
+                to={`/collection/${item.id}`}
                 className="group relative block h-48 w-32 overflow-hidden bg-gray-100 sm:h-56 sm:w-40"
               >
                 <img
@@ -29,17 +30,17 @@ const Cart = () => {
                   alt="Photo by Thái An"
                   className="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
                 />
-              </a>
+              </Link>
 
               <div className="flex flex-1 flex-col justify-between py-4">
                 <div>
-                  <a
-                    href="#"
+                  <Link
+                    to={`/collection/${item.id}`}
                     className="mb-1 inline-block text-sm md:text-base
                      font-bold text-gray-800 transition duration-100 hover:text-gray-500 "
                   >
                     {item?.title}
-                  </a>
+                  </Link>
 
                   <span className="block text-gray-500">
                     Size: {item?.size}
