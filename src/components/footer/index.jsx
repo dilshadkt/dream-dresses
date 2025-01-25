@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -8,23 +9,24 @@ const Footer = () => {
           <div className="col-span-full lg:col-span-2">
             {/* <!-- logo - start --> */}
             <div className="mb-4 lg:-mt-2">
-              <a
-                href="/"
-                className="inline-flex items-center gap-2 text-xl font-bold text-black md:text-2xl"
+              <Link
+                to="/"
+                className="inline-flex  max-h-[70px] overflow-hidden flexCenter items-center gap-2.5 text-2xl font-bold text-black md:text-3xl"
                 aria-label="logo"
               >
-                <svg
-                  width="95"
-                  height="94"
-                  viewBox="0 0 95 94"
-                  className="h-auto w-5 text-indigo-500"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M96 0V47L48 94H0V47L48 0H96Z" />
-                </svg>
-                Flowrift
-              </a>
+                {/* <svg
+              width="95"
+              height="94"
+              viewBox="0 0 95 94"
+              className="h-auto w-6 text-indigo-500"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M96 0V47L48 94H0V47L48 0H96Z" />
+            </svg>
+            Flowrift */}
+                <img src="/images/logo.png" alt="" className="w-52 " />
+              </Link>
             </div>
             {/* <!-- logo - end --> */}
 
@@ -275,7 +277,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t py-8 text-center text-sm text-gray-400">
-          © 2021 - Present Flowrift. All rights reserved.
+          © 2025 - Present Dream Dresses. All rights reserved.
         </div>
       </footer>
     </div>

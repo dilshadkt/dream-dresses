@@ -13,10 +13,10 @@ const Navbar = () => {
           {/* <!-- logo - start --> */}
           <Link
             to="/"
-            className="inline-flex items-center gap-2.5 text-2xl font-bold text-black md:text-3xl"
+            className="inline-flex  max-h-[70px] overflow-hidden flexCenter items-center gap-2.5 text-2xl font-bold text-black md:text-3xl"
             aria-label="logo"
           >
-            <svg
+            {/* <svg
               width="95"
               height="94"
               viewBox="0 0 95 94"
@@ -26,7 +26,8 @@ const Navbar = () => {
             >
               <path d="M96 0V47L48 94H0V47L48 0H96Z" />
             </svg>
-            Flowrift
+            Flowrift */}
+            <img src="/images/logo.png" alt="" className=" w-40 md:w-52 " />
           </Link>
           {/* <!-- logo - end --> */}
 
