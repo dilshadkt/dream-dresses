@@ -10,7 +10,7 @@ const Navbar = () => {
         <div className="mx-auto flex max-w-screen-2xl items-center justify-between px-4 md:px-8">
           {/* <!-- logo - start --> */}
           <Link
-            href="/"
+            to="/"
             className="inline-flex items-center gap-2.5 text-2xl font-bold text-black md:text-3xl"
             aria-label="logo"
           >
