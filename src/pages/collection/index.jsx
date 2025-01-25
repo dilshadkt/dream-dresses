@@ -13,7 +13,7 @@ const Collection = () => {
           {/* <!-- product - start --> */}
           <div>
             <Link
-              to="/sales?category=men"
+              to="/sale?category=men"
               className="group relative flex h-96 items-end overflow-hidden rounded-lg bg-gray-100 p-4 shadow-lg"
             >
               <img
@@ -82,7 +82,7 @@ const Collection = () => {
           {/* <!-- product - start --> */}
           <div>
             <Link
-              to="/sale?category=teen"
+              to="/sale?category=teens"
               className="group relative flex h-96 items-end overflow-hidden rounded-lg bg-gray-100 p-4 shadow-lg"
             >
               <img
