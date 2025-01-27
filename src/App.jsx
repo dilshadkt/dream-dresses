@@ -10,6 +10,7 @@ import Footer from "./components/footer";
 import ProductDetailPage from "./pages/details";
 import { CartProvider } from "./context/cart";
 import ScrollToTop from "./components/scrollTop";
+import Checkout from "./pages/checkout";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/sale" element={<Sale />} />
             <Route path="/about" element={<About />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="/whishlist" element={<Whishlist />} />
           </Routes>
           <Footer />
