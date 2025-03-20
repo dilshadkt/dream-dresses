@@ -79,11 +79,14 @@ const Sale = () => {
                 </div>
 
                 <div className="flex flex-col items-end">
-                  <span className="font-bold text-gray-600 lg:text-lg">
-                    {product.price}
+                  {/* Discounted Price (50% of Original Price) */}
+                  <span className="font-bold whitespace-nowrap text-gray-600 lg:text-lg">
+                    ₹ {Number(product.price)}
                   </span>
-                  <span className="text-sm text-red-500 line-through">
-                    {Number(product.price) + Number((product.price * 50) / 100)}
+
+                  {/* Original Price (Before 50% Discount) */}
+                  <span className="text-sm whitespace-nowrap text-red-500 line-through">
+                    ₹ {Number(product.price) * 2}
                   </span>
                 </div>
               </div>
