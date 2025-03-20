@@ -11,6 +11,8 @@ import ProductDetailPage from "./pages/details";
 import { CartProvider } from "./context/cart";
 import ScrollToTop from "./components/scrollTop";
 import Checkout from "./pages/checkout";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/whishlist" element={<Whishlist />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/TermsOfService" element={<TermsOfService />} />
           </Routes>
           <Footer />
         </BrowserRouter>

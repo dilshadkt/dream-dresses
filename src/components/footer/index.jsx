@@ -29,7 +29,7 @@ const Footer = () => {
             </p>
 
             {/* <!-- social - start --> */}
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
               <a
                 href="#"
                 target="_blank"
@@ -80,7 +80,7 @@ const Footer = () => {
                   <path d="M19.4168 2.4594C17.7648 0.873472 15.4785 0 12.9793 0C9.1616 0 6.81353 1.56493 5.51603 2.87767C3.91693 4.49547 3 6.64362 3 8.77138C3 11.4429 4.11746 13.4934 5.98876 14.2563C6.11439 14.3078 6.24081 14.3337 6.36475 14.3337C6.75953 14.3337 7.07233 14.0754 7.1807 13.661C7.24389 13.4233 7.39024 12.8369 7.45389 12.5823C7.59011 12.0795 7.48005 11.8377 7.18295 11.4876C6.64173 10.8472 6.38969 10.0899 6.38969 9.10438C6.38969 6.17698 8.56948 3.06578 12.6095 3.06578C15.8151 3.06578 17.8064 4.88772 17.8064 7.82052C17.8064 9.67124 17.4077 11.3852 16.6837 12.6468C16.1805 13.5235 15.2957 14.5685 13.9375 14.5685C13.3501 14.5685 12.8225 14.3272 12.4896 13.9066C12.1751 13.5089 12.0714 12.9953 12.1979 12.4599C12.3408 11.855 12.5357 11.2241 12.7243 10.6141C13.0682 9.5001 13.3933 8.44789 13.3933 7.60841C13.3933 6.17252 12.5106 5.20769 11.1969 5.20769C9.52737 5.20769 8.21941 6.90336 8.21941 9.06805C8.21941 10.1297 8.50155 10.9237 8.62929 11.2286C8.41896 12.1197 7.16899 17.4176 6.93189 18.4166C6.79478 18.9997 5.96893 23.6059 7.33586 23.9731C8.87168 24.3858 10.2445 19.8997 10.3842 19.3928C10.4975 18.9806 10.8937 17.4216 11.1365 16.4634C11.878 17.1775 13.0717 17.6603 14.2333 17.6603C16.4231 17.6603 18.3924 16.6749 19.7786 14.8858C21.1229 13.1505 21.8633 10.7318 21.8633 8.0757C21.8632 5.99923 20.9714 3.95209 19.4168 2.4594Z" />
                 </svg>
               </a>
-            </div>
+            </div> */}
             {/* <!-- social - end --> */}
           </div>
 
@@ -92,140 +92,39 @@ const Footer = () => {
 
             <nav className="flex flex-col gap-4">
               <div>
-                <a
-                  href="#"
+                <Link
+                  to={"/sale?category=men"}
                   className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                 >
-                  Overview
-                </a>
+                  Men
+                </Link>
               </div>
 
               <div>
-                <a
-                  href="#"
+                <Link
+                  to={"/sale?category=women"}
                   className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                 >
-                  Solutions
-                </a>
+                  Women
+                </Link>
               </div>
 
               <div>
-                <a
-                  href="#"
+                <Link
+                  to={"/sale?category=kids"}
                   className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                 >
-                  Pricing
-                </a>
+                  Kids
+                </Link>
               </div>
 
               <div>
-                <a
-                  href="#"
+                <Link
+                  to={"/sale?category=teens"}
                   className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                 >
-                  Customers
-                </a>
-              </div>
-            </nav>
-          </div>
-          {/* <!-- nav - end --> */}
-
-          {/* <!-- nav - start --> */}
-          <div>
-            <div className="mb-4 font-bold uppercase tracking-widest text-gray-800">
-              Company
-            </div>
-
-            <nav className="flex flex-col gap-4">
-              <div>
-                <a
-                  href="#"
-                  className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                >
-                  About
-                </a>
-              </div>
-
-              <div>
-                <a
-                  href="#"
-                  className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                >
-                  Investor Relations
-                </a>
-              </div>
-
-              <div>
-                <a
-                  href="#"
-                  className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                >
-                  Jobs
-                </a>
-              </div>
-
-              <div>
-                <a
-                  href="#"
-                  className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                >
-                  Press
-                </a>
-              </div>
-
-              <div>
-                <a
-                  href="#"
-                  className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                >
-                  Blog
-                </a>
-              </div>
-            </nav>
-          </div>
-          {/* <!-- nav - end --> */}
-
-          {/* <!-- nav - start --> */}
-          <div>
-            <div className="mb-4 font-bold uppercase tracking-widest text-gray-800">
-              Support
-            </div>
-
-            <nav className="flex flex-col gap-4">
-              <div>
-                <a
-                  href="#"
-                  className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                >
-                  Contact
-                </a>
-              </div>
-
-              <div>
-                <a
-                  href="#"
-                  className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                >
-                  Documentation
-                </a>
-              </div>
-
-              <div>
-                <a
-                  href="#"
-                  className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                >
-                  Chat
-                </a>
-              </div>
-
-              <div>
-                <a
-                  href="#"
-                  className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                >
-                  FAQ
-                </a>
+                  Teen
+                </Link>
               </div>
             </nav>
           </div>
@@ -239,30 +138,21 @@ const Footer = () => {
 
             <nav className="flex flex-col gap-4">
               <div>
-                <a
-                  href="#"
+                <Link
+                  to="/TermsOfService"
                   className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                 >
                   Terms of Service
-                </a>
+                </Link>
               </div>
 
               <div>
-                <a
-                  href="#"
+                <Link
+                  to="/privacy-policy"
                   className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                 >
                   Privacy Policy
-                </a>
-              </div>
-
-              <div>
-                <a
-                  href="#"
-                  className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                >
-                  Cookie settings
-                </a>
+                </Link>
               </div>
             </nav>
           </div>
