@@ -117,7 +117,7 @@ const RefundPolicy = () => {
               us:
             </p>
             <ul className="list-none pl-6 mb-4">
-              <li className="mb-2">Email: support@example.com</li>
+              <li className="mb-2">Email: support@dreamdresses.com</li>
               <li className="mb-2">Phone: (555) 123-4567</li>
               <li className="mb-2">
                 Hours: Monday-Friday, 9:00 AM - 5:00 PM EST
