@@ -3,12 +3,33 @@ import { Link } from "react-router-dom";
 import { products } from "../../constants";
 
 const Products = () => {
+  // Function to get random products
   const getRandomProducts = (arr, count) => {
-    const shuffled = arr.sort(() => 0.5 - Math.random()); // Shuffle the array
+    const shuffled = [...arr].sort(() => 0.5 - Math.random()); // Shuffle the array
     return shuffled.slice(0, count); // Get the first `count` items
   };
 
-  const randomProducts = getRandomProducts(products, 12);
+  // Function to generate random discount between 10% and 70%
+  const getRandomDiscount = () => {
+    const discounts = [19, 43, 27, 25, 30, 40, 59, 65, 31];
+    return discounts[Math.floor(Math.random() * discounts.length)];
+  };
+
+  // Get random products and add random discounts
+  const randomProducts = getRandomProducts(products, 12).map((product) => {
+    const discount = getRandomDiscount();
+    const originalPrice = Number(product.price);
+    // The displayed price is the discounted price, and the strikethrough price is the original
+    const discountedPrice = Math.round(originalPrice * (1 - discount / 100));
+
+    return {
+      ...product,
+      discount,
+      discountedPrice,
+      originalPrice,
+    };
+  });
+
   return (
     <div className="bg-white py-6 sm:py-8 lg:py-12">
       <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
@@ -35,17 +56,19 @@ const Products = () => {
                 <img
                   src={product.image[0]}
                   loading="lazy"
-                  alt="Photo by Austin Wade"
+                  alt={`Product image of ${product.title}`}
                   className="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
                 />
 
                 <div className="absolute bottom-2 left-0 flex gap-2">
                   <span className="rounded-r-lg bg-red-500 px-3 py-1.5 text-sm font-semibold uppercase tracking-wider text-white">
-                    -50%
+                    -{product.discount}%
                   </span>
-                  <span className="rounded-lg bg-white px-3 py-1.5 text-sm font-bold uppercase tracking-wider text-gray-800">
-                    New
-                  </span>
+                  {product.isNew && (
+                    <span className="rounded-lg bg-white px-3 py-1.5 text-sm font-bold uppercase tracking-wider text-gray-800">
+                      New
+                    </span>
+                  )}
                 </div>
               </Link>
 
@@ -61,14 +84,14 @@ const Products = () => {
                 </div>
 
                 <div className="flex flex-col items-end">
-                  {/* Discounted Price (50% of Original Price) */}
+                  {/* Discounted Price */}
                   <span className="font-bold whitespace-nowrap text-gray-600 lg:text-lg">
-                    ₹ {Number(product.price)}
+                    ₹ {product.originalPrice}
                   </span>
 
-                  {/* Original Price (Before 50% Discount) */}
+                  {/* Original Price */}
                   <span className="text-sm whitespace-nowrap text-red-500 line-through">
-                    ₹ {Number(product.price) * 2}
+                    ₹ {product.originalPrice + product.discountedPrice}
                   </span>
                 </div>
               </div>
@@ -79,7 +102,7 @@ const Products = () => {
           <Link
             to={"/sale"}
             className="text-gray-700 border hover:bg-indigo-500 hover:border-none
-          hover:text-white px-10 py-3 rounded-lg"
+            hover:text-white px-10 py-3 rounded-lg"
           >
             View All
           </Link>

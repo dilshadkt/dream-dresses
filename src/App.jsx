@@ -13,6 +13,7 @@ import ScrollToTop from "./components/scrollTop";
 import Checkout from "./pages/checkout";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
+import RefundPolicy from "./pages/rerundPolicy";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="/whishlist" element={<Whishlist />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/TermsOfService" element={<TermsOfService />} />
+            <Route path="/refund-policy" element={<RefundPolicy />} />
           </Routes>
           <Footer />
         </BrowserRouter>
