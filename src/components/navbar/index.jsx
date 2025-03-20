@@ -1,56 +1,71 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { UseCart } from "../../hooks/UseCart";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { items } = UseCart();
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  // Function to determine if a link is active
+  const isActive = (path) => {
+    return currentPath === path;
+  };
 
   return (
     <>
-      <header className=" border-b sticky top-0 bg-white z-50">
+      <header className="border-b sticky top-0 bg-white z-50">
         <div className="mx-auto flex max-w-screen-2xl items-center justify-between px-4 md:px-8">
           {/* <!-- logo - start --> */}
           <Link
             to="/"
-            className="inline-flex  max-h-[70px] overflow-hidden flexCenter items-center gap-2.5 text-2xl font-bold text-black md:text-3xl"
+            className="inline-flex max-h-[70px] overflow-hidden flexCenter items-center gap-2.5 text-2xl font-bold text-black md:text-3xl"
             aria-label="logo"
           >
-            {/* <svg
-              width="95"
-              height="94"
-              viewBox="0 0 95 94"
-              className="h-auto w-6 text-indigo-500"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M96 0V47L48 94H0V47L48 0H96Z" />
-            </svg>
-            Flowrift */}
-            <img src="/images/logo.png" alt="" className=" w-32 md:w-52 " />
+            <img src="/images/logo.png" alt="" className="w-32 md:w-52" />
           </Link>
           {/* <!-- logo - end --> */}
 
           {/* <!-- nav - start --> */}
           <nav className="hidden gap-12 lg:flex 2xl:ml-16">
-            <Link to={"/"} className="text-lg font-semibold text-indigo-500">
+            <Link
+              to="/"
+              className={`text-lg font-semibold ${
+                isActive("/")
+                  ? "text-indigo-500"
+                  : "text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
+              }`}
+            >
               Home
             </Link>
             <Link
               to="/collection"
-              className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
+              className={`text-lg font-semibold ${
+                isActive("/collection")
+                  ? "text-indigo-500"
+                  : "text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
+              }`}
             >
               Collections
             </Link>
             <Link
-              to="sale"
-              className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
+              to="/sale"
+              className={`text-lg font-semibold ${
+                isActive("/sale")
+                  ? "text-indigo-500"
+                  : "text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
+              }`}
             >
               Sale
             </Link>
             <Link
               to="/about"
-              className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
+              className={`text-lg font-semibold ${
+                isActive("/about")
+                  ? "text-indigo-500"
+                  : "text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
+              }`}
             >
               About
             </Link>
@@ -85,9 +100,11 @@ const Navbar = () => {
 
             <Link
               to="/cart"
-              className="flex h-12 w-12 flex-col items-center justify-center 
+              className={`flex h-12 w-12 flex-col items-center justify-center 
               gap-1.5 transition duration-100 hover:bg-gray-100 active:bg-gray-200 
-             relative sm:h-20 sm:w-20 md:h-24 md:w-24"
+             relative sm:h-20 sm:w-20 md:h-24 md:w-24 ${
+               isActive("/cart") ? "bg-gray-100" : ""
+             }`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +126,7 @@ const Navbar = () => {
               </span>
               {items?.length > 0 && (
                 <div
-                  className="absolute top-0 md:top-2 right-1 md:right-5  w-5 md:w-6  h-5 md:h-6 rounded-full bg-indigo-500
+                  className="absolute top-0 md:top-2 right-1 md:right-5 w-5 md:w-6 h-5 md:h-6 rounded-full bg-indigo-500
                text-white  
                text-sm md:text-base flex items-center justify-center"
                 >
@@ -163,28 +180,44 @@ const Navbar = () => {
           <Link
             to="/"
             onClick={() => setMenuOpen(false)}
-            className="text-lg font-semibold text-gray-800 hover:text-indigo-500 transition"
+            className={`text-lg font-semibold ${
+              isActive("/")
+                ? "text-indigo-500"
+                : "text-gray-800 hover:text-indigo-500"
+            } transition`}
           >
             Home
           </Link>
           <Link
             to="/collection"
             onClick={() => setMenuOpen(false)}
-            className="text-lg font-semibold text-gray-800 hover:text-indigo-500 transition"
+            className={`text-lg font-semibold ${
+              isActive("/collection")
+                ? "text-indigo-500"
+                : "text-gray-800 hover:text-indigo-500"
+            } transition`}
           >
             Collections
           </Link>
           <Link
             to="/sale"
             onClick={() => setMenuOpen(false)}
-            className="text-lg font-semibold text-gray-800 hover:text-indigo-500 transition"
+            className={`text-lg font-semibold ${
+              isActive("/sale")
+                ? "text-indigo-500"
+                : "text-gray-800 hover:text-indigo-500"
+            } transition`}
           >
             Sale
           </Link>
           <Link
             to="/about"
             onClick={() => setMenuOpen(false)}
-            className="text-lg font-semibold text-gray-800 hover:text-indigo-500 transition"
+            className={`text-lg font-semibold ${
+              isActive("/about")
+                ? "text-indigo-500"
+                : "text-gray-800 hover:text-indigo-500"
+            } transition`}
           >
             About
           </Link>
@@ -195,11 +228,15 @@ const Navbar = () => {
             <Link
               to="/account"
               onClick={() => setMenuOpen(false)}
-              className="flex flex-col items-center"
+              className={`flex flex-col items-center ${
+                isActive("/account") ? "text-indigo-500" : ""
+              }`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-gray-800"
+                className={`h-6 w-6 ${
+                  isActive("/account") ? "text-indigo-500" : "text-gray-800"
+                }`}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -211,17 +248,27 @@ const Navbar = () => {
                   d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                 />
               </svg>
-              <span className="text-xs text-gray-600 mt-1">Account</span>
+              <span
+                className={`text-xs ${
+                  isActive("/account") ? "text-indigo-500" : "text-gray-600"
+                } mt-1`}
+              >
+                Account
+              </span>
             </Link>
 
             <Link
               to="/cart"
               onClick={() => setMenuOpen(false)}
-              className="flex relative flex-col items-center"
+              className={`flex relative flex-col items-center ${
+                isActive("/cart") ? "text-indigo-500" : ""
+              }`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-gray-800"
+                className={`h-6 w-6 ${
+                  isActive("/cart") ? "text-indigo-500" : "text-gray-800"
+                }`}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -235,14 +282,20 @@ const Navbar = () => {
               </svg>
               {items?.length > 0 && (
                 <div
-                  className="absolute -top-3 md:top-2 -right-3 md:right-5  w-5 md:w-6  h-5 md:h-6 rounded-full bg-indigo-500
+                  className="absolute -top-3 md:top-2 -right-3 md:right-5 w-5 md:w-6 h-5 md:h-6 rounded-full bg-indigo-500
                text-white  
                text-sm md:text-base flex items-center justify-center"
                 >
                   {items?.length}
                 </div>
               )}
-              <span className="text-xs text-gray-600 mt-1">Cart</span>
+              <span
+                className={`text-xs ${
+                  isActive("/cart") ? "text-indigo-500" : "text-gray-600"
+                } mt-1`}
+              >
+                Cart
+              </span>
             </Link>
           </div>
         </div>
